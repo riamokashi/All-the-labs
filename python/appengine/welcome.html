@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Welcome to memegen</title>
+    <link rel="stylesheet" href="/css/master.css">
+  </head>
+    <body>
+      <h1>Meme Generator</h1>
+      <img height = "100px" width= "150px"
+      src="https://botlist.imgix.net/2723/c/submission17260SGBrS-medium.jpg?auto=compress">
+      <h2>Welcome to the best meme generator out there!</h2>
+        <form method="post" action="/result">
+          {% for url in imgs %}
+            <img src="{{url}}" width="150px" height="100px">
+            <input type="radio" name="template" value="{{url}}"/>
+          {% endfor %}
+          <br>
+          <input type="text" name="top-line" value="your first line here"/>
+          <br>
+          <input type="text" name="bottom-line" value="your bottom line here"/>
+          <input type="submit" value="Go!"/>
+        </form>
+<a href="/allmemes">History of Memes</a>
+
+    </body>
+</html>
